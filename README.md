@@ -7,3 +7,9 @@ The `install.sh` script will handle updating your local **.bashrc** so that all 
 ```bash
 . install
 ```
+
+Once installed you should see the following when a new terminal is opened.
+```md
+[SUCCESS] - Loaded Functions
+[SUCCESS] - Custom git configuration loaded.
+```
