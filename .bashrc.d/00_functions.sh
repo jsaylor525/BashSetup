@@ -28,7 +28,7 @@ export -f echo_success
 alias echo_s="echo_success"
 
 echo_debug() {
-  printf "${PRINT_PURPLE}[SUCCESS]${PRINT_DEFAULT} - ${1}\n"
+  printf "${PRINT_PURPLE}[DEBUG]${PRINT_DEFAULT} - ${1}\n"
 }
 alias echo_s="echo_debug"
 
@@ -39,6 +39,7 @@ export -f echo_failure
 alias echo_f="echo_failure"
 alias echo_fail="echo_failure"
 alias echo_error="echo_failure"
+alias echo_err="echo_failure"
 alias echo_e="echo_failure"
 
 echo_warning() {
@@ -46,6 +47,7 @@ echo_warning() {
 }
 export -f echo_warning
 alias echo_w="echo_warning"
+alias echo_warn="echo_warning"
 alias echo_warning="echo_warning"
-``
-echo_success "Loaded Functions"
+
+[ ! -z "$DISPLAY" ] && echo_success "Loaded Functions"
