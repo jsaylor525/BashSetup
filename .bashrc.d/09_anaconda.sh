@@ -8,4 +8,6 @@ if [ ! -d $ANACONDA_HOME ]; then
   conda activate
 
   [ ! -z "$DISPLAY" ] && echo_success "Custom python configuration loaded."
+else
+  [ ! -z "$DISPLAY" ] && echo_warning "Bypassing anaconda setup."
 fi
