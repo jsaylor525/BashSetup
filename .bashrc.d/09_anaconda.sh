@@ -1,13 +1,15 @@
 #!/bin/bash
 
-export ANACONDA_HOME="${HOME}/anaconda3"
+# Default path for anaconda
+export ANACONDA_HOME=${ANACONDA_HOME:-"${HOME}/anaconda3"}
 
-if [ ! -d $ANACONDA_HOME ]; then
+# Enable Anaconda if USE_ANACONDA is set and ANACONDA_HOME is valid
+if [ -d $ANACONDA_HOME ] && [ ! -z "${USE_ANACONDA}" ]; then
   . ${ANACONDA_HOME}/etc/profile.d/conda.sh
 
   conda activate
 
-  [ ! -z "$DISPLAY" ] && echo_success "Custom python configuration loaded."
+  [ ! -z "$DISPLAY" ] && echo_success "Enabled python Anaconda configuration loaded."
 else
-  [ ! -z "$DISPLAY" ] && echo_warning "Bypassing anaconda setup."
+  [ ! -z "$DISPLAY" ] && echo_warning "Bypassing Anaconda setup."
 fi
