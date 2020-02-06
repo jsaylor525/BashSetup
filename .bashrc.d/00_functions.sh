@@ -1,35 +1,50 @@
-#!/bin/bash   
+#!/bin/bash
 
-echo_success() {
-  printf "${Green}[SUCCESS]${ResetColor} - ${1}\n"
+log_success() {
+  printf "${Green}[SUCCESS] - ${*}${ResetColor}\n"
 }
-export -f echo_success
-alias echo_s="echo_success"
+export -f log_success
+alias log_s="log_success"
 
 
-echo_debug() {
-  printf "${Magenta}[DEBUG]${ResetColor} - ${1}\n"
+log_verbose() {
+  printf "${Green}[VERBOSE] - ${*}${ResetColor}\n"
 }
-alias echo_s="echo_debug"
+export -f log_verbose
+alias log_v="log_verbose"
 
 
-echo_failure() {
-  printf "${Red}[FAILURE]${ResetColor} - ${1}\n"
+log_debug() {
+  printf "${Magenta}[DEBUG] - ${*}${ResetColor}\n"
 }
-export -f echo_failure
-alias echo_f="echo_failure"
-alias echo_fail="echo_failure"
-alias echo_error="echo_failure"
-alias echo_err="echo_failure"
-alias echo_e="echo_failure"
+export -f log_debug
+alias log_d="log_debug"
 
 
-echo_warning() {
-  printf "${Yellow}[WARNING]${ResetColor} - ${1}\n"
+log_info() {
+  printf "${Blue}[INFO] - ${*}${ResetColor}\n"
 }
-export -f echo_warning
-alias echo_w="echo_warning"
-alias echo_warn="echo_warning"
-alias echo_warning="echo_warning"
+export -f log_info
+alias log_i="log_info"
 
-[ ! -z "$DISPLAY" ] && echo_success "Loaded Functions"
+
+log_failure() {
+  printf "${Red}[FAILURE] - ${*}${ResetColor}\n"
+}
+export -f log_failure
+alias log_f="log_failure"
+alias log_fail="log_failure"
+alias log_error="log_failure"
+alias log_err="log_failure"
+alias log_e="log_failure"
+
+
+log_warning() {
+  printf "${Yellow}[WARNING] - ${*}${ResetColor}\n"
+}
+export -f log_warning
+alias log_w="log_warning"
+alias log_warn="log_warning"
+alias log_warning="log_warning"
+
+[ ! -z "$DISPLAY" ] && log_success "Loaded Functions"

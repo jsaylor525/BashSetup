@@ -77,3 +77,5 @@ define_color_names() {
 if [[ -z "${ColorNames+x}" || "${#ColorNames[*]}" = 0 || -z "${IntenseBlack:+x}" || -z "${ResetColor:+x}" ]]; then
   define_color_names
 fi
+
+export COLOR_PRINT_ENABLED=1

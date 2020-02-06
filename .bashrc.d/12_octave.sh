@@ -2,4 +2,4 @@
 
 alias octave-gui="octave &> /dev/null &"
 
-[ ! -z "$DISPLAY" ] && echo_success "Custom octave configuration loaded."
+[ ! -z "$DISPLAY" ] && log_success "Custom octave configuration loaded."

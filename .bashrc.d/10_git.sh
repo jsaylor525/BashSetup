@@ -90,6 +90,6 @@ function git_tools() {
         alias GitKraken="gitkraken &> /dev/null &"
     fi
 
-    [ ! -z "$DISPLAY" ] && echo_success "Custom git configuration loaded."
+    [ ! -z "$DISPLAY" ] && log_success "Custom git configuration loaded."
 }
 git_tools

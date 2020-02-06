@@ -8,7 +8,7 @@ if [ ! -z "${JAVA_DEV}" ]; then
 
   alias intellij="intellij-idea-community &> /dev/null &"
 
-  [ ! -z "$DISPLAY" ] && echo_success "JAVA environment set"
+  [ ! -z "$DISPLAY" ] && log_success "JAVA environment set"
 else
-  [ ! -z "$DISPLAY" ] && echo_warn "JAVA setup bypassed"
+  [ ! -z "$DISPLAY" ] && log_warn "JAVA setup bypassed"
 fi
