@@ -10,7 +10,7 @@ function git_prompt() {
         echo "git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1"
         echo ""
     else
-        GIT_PROMPT_ONLY_IN_REPO=1
+        # GIT_PROMPT_ONLY_IN_REPO=1
         # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
         # GIT_PROMPT_IGNORE_SUBMODULES=1 # uncomment to avoid searching for changed files in submodules
         # GIT_PROMPT_WITH_VIRTUAL_ENV=0 # uncomment to avoid setting virtual environment infos for node/python/conda environments
@@ -22,8 +22,8 @@ function git_prompt() {
 
         # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
 
-        # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
-        # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
+        GIT_PROMPT_START="${BrightGreen}\u@\h ${BrightBlue}\w\n${ResetColor}"
+        GIT_PROMPT_END="> "
 
         # as last entry source the gitprompt script
         # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
