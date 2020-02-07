@@ -26,5 +26,5 @@ The following prefixes and practices should be employeed.
 * *5x* - Virtual Environments (Docker, Python venv, etc.)
 * *6x* - Reserved
 * *7x* - Programming Language Configuration
-* *8x* - Reserved
+* *8x* - Tools (Configurations)
 * *9x* - Project configurations
