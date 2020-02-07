@@ -66,7 +66,7 @@ define_color_names() {
   _map_colors Bright ${AttrBright}
   _map_colors Dim    ${AttrDim}
   _map_colors ''     ${AttrNorm}
-  _map_colors Bline  ${AttrBlink}
+  _map_colors Blink  ${AttrBlink}
 
   _def_color IntenseBlack 0 90
   _def_color ResetColor   0 0

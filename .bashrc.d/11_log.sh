@@ -47,4 +47,4 @@ alias log_w="log_warning"
 alias log_warn="log_warning"
 alias log_warning="log_warning"
 
-[ ! -z "$DISPLAY" ] && log_success "Loaded Functions"
+[ ! -z "$DISPLAY" ] && log_success "Loaded Logging"
