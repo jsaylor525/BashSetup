@@ -1,6 +1,11 @@
 #/bin/bash
 
-. .bashrc.d/00_colors.sh
+. .bashrc.d/00_commands.sh
+. .bashrc.d/10_colors.sh
+. .bashrc.d/11_log.sh
+
+# Set logging level
+# LOG_LEVEL=$VERBOSE
 
 # Uncommnet this line to test this in the /tmp/ directory
 # TESTING=1
@@ -19,8 +24,9 @@ else
   mkdir -p ${BASHRC_DIR}/
 fi
 
+
 function test_log() {
-  [ ! -z ${TESTING:+0} ] && printf "${Yellow}[TESTING] $*${ResetColor}\n"
+  [ ! -z ${TESTING:+0} ] && printf "${Yellow}[TESTING] - ${*}${ResetColor}\n"
 }
 
 
@@ -29,15 +35,14 @@ function create_bachrc_backup() {
   cp -r ${BASHRC_DIR} ${BACKUP_DIR}
   cp ${BASHRC_FILE} ${BACKUP_DIR}
   test_log "Created backup: ${BACKUP_DIR}"
-  test_log "contents: $(ls ${BACKUP_DIR})"
+  test_log "contents: $(ls -al ${BACKUP_DIR})"
 }
 
 
 function add_hook_to_bashrc() {
-  check_for_hook=$(cat ${BASHRC_FILE} | grep .bashrc.d)
+  local check_for_hook=$(cat ${BASHRC_FILE} | grep .bashrc.d)
   if [[ -z "${check_for_hook}" ]]; then
     cat bashrd_snippet >> ${BASHRC_FILE}
-    unset cmd
   fi
 }
 
@@ -45,10 +50,9 @@ function add_hook_to_bashrc() {
 function copy_scripts_to_bashrcd() {
   if [[ -d ".bashrc.d" ]]; then
     for i in .bashrc.d/*.sh; do
-      scriptname=${i##*/}
-      test_log $scriptname
+      local scriptname=${i##*/}
       cp $i ${BASHRC_DIR}/${scriptname}
-      unset scriptname
+      log_i "Installed $scriptname"
     done
     unset i
   else
@@ -56,16 +60,20 @@ function copy_scripts_to_bashrcd() {
   fi
 }
 
+
+function show_deltas() {
+  log_w "$(diff .bashrc.d ${BASHRC_DIR})"
+}
+
 create_bachrc_backup
 add_hook_to_bashrc
 copy_scripts_to_bashrcd
+show_deltas
 
-if [[ ! -z "${TESTING}" ]]; then
-  test_log "Contents of the .bashrc file"
-  cat ${BASHRC_FILE}
+# log_v "Contents of the .bashrc file\n$(cat ${BASHRC_FILE})"
+# log_d "Contents of the .bashrc.d directory\n$(ls -al ${BASHRC_DIR})"
 
-  test_log "Contents of the .bashrc.d directory"
-  ls ${BASHRC_DIR}
-fi
+# Immedieately load the bashrc
+# source ${BASHRC_FILE}
 
 unset TESTING
