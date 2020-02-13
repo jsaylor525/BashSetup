@@ -22,8 +22,8 @@ function git_prompt() {
 
         # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
 
-        GIT_PROMPT_START="${BrightGreen}\u@\h ${BrightBlue}\w\n${ResetColor}"
-        GIT_PROMPT_END="> "
+        GIT_PROMPT_START="\[${BrightGreen}\]\u@\h \[${BrightBlue}\]\w\[${ResetColor}\]"
+        GIT_PROMPT_END="$ "
 
         # as last entry source the gitprompt script
         # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)

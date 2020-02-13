@@ -55,8 +55,6 @@ function git_tools() {
         alias git-kraken="gitkraken &> /dev/null &"
         alias GitKraken="gitkraken &> /dev/null &"
     fi
-
-    [ ! -z "$DISPLAY" ] && log_success "Custom git configuration loaded."
 }
 git_tools
 
