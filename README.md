@@ -12,7 +12,24 @@ Once installed you should see the following when a new terminal is opened.
 ```md
 [SUCCESS] - Loaded Functions
 [SUCCESS] - Custom git configuration loaded.
+... etc
 ```
+
+## Customization
+The following variables can be used to alter the behavior if exported in your `~/.bashrc`
+* **USE_COLORS** - setting this to any value will enable color functions
+    + *WARNING There seems to be a bug with this currently!*
+* **LOG_LEVEL** - setting this to an integer value between 1 and 5 change the level of logs to the terminal
+    + 1 being the quietest (ERROR) and 5 being the most verbose (VERBOSE).
+* **GITPROMPT** - allows the choice of the gitprompt
+    + *bash-git-prompt* - a gitprompt by [magicmonty](https://github.com/magicmonty/bash-git-prompt.git)
+    + *basic* - a custom lightweight prompt that simply tells what the current working branch is
+* **USE_ANACONDA** - set this to any value to configure conda
+* **JAVA_DEV** - set this to configure java settings
+* **USE_OCTAVE** - set this to configure octave settings
+* **DEFAULT_PYTHON_VER** - allows the default python version to be used with shorthand `python` an `py`
+    + default to python3
+* **BCOMPARE_ENABLED** - if you want to use beyond compare as your default diff and merge tool
 
 ## Individual scripts
 Inside of the `.bashrc.d` all the individual scripts.

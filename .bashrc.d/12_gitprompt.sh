@@ -55,11 +55,11 @@ function bash_git_prompt() {
 case ${GITPROMPT} in
     basic )
         basic_git_prompt        
-        [ ! -z "$DISPLAY" ] && log_success "Git prompt loaded"
+        [ ! -z "$DISPLAY" ] && log_success "Basic git prompt loaded"
         ;;
     bash-git-prompt )
         bash_git_prompt        
-        [ ! -z "$DISPLAY" ] && log_success "Git prompt loaded"
+        [ ! -z "$DISPLAY" ] && log_success "bash-git-prompt loaded"
         ;;
     * )
         [ ! -z "$DISPLAY" ] && log_error "No git prompt loaded"

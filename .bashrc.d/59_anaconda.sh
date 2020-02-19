@@ -13,6 +13,4 @@ if [ -d $ANACONDA_HOME ] && [ ! -z "${USE_ANACONDA}" ]; then
   alias conda-envs="conda env list"
 
   [ ! -z "$DISPLAY" ] && log_success "Enabled python Anaconda configuration loaded."
-else
-  [ ! -z "$DISPLAY" ] && log_warning "Bypassing Anaconda setup."
 fi
