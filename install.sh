@@ -45,6 +45,18 @@ function add_hook_to_bashrc() {
     echo "" >> ${BASHRC_FILE}
     echo "# =====================================================================" >> ${BASHRC_FILE}
     echo "# BashSetup https://github.com/jsaylor525/BashSetup.git" >> ${BASHRC_FILE}
+    echo "" >> ${BASHRC_FILE}
+    echo "#Uncommment The lines below to enable/modify setup" >> ${BASHRC_FILE}
+    echo "#export USE_COLORS=1" >> ${BASHRC_FILE}
+    echo "#export LOG_LEVEL=3" >> ${BASHRC_FILE}
+    echo "#export GITPROMPT='bash-git-prompt'" >> ${BASHRC_FILE}
+    echo "#export GITPROMPT='basic'" >> ${BASHRC_FILE}
+    echo "#export USE_ANACONDA=1" >> ${BASHRC_FILE}
+    echo "#export JAVA_DEV=1" >> ${BASHRC_FILE}
+    echo "#export USE_OCTAVE=1" >> ${BASHRC_FILE}
+    echo "#export USE_XILINX=1" >> ${BASHRC_FILE}
+    echo "#export DEFAULT_PYTHON_VER=python3" >> ${BASHRC_FILE}
+    echo "#export BCOMPARE_ENABLED=1" >> ${BASHRC_FILE}
     echo "export BASHSETUP_HOME=${BASHSETUP_HOME}" >> ${BASHRC_FILE}
     echo "${BASHSETUP_CMD}" >> ${BASHRC_FILE}
     echo "" >> ${BASHRC_FILE}
