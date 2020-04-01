@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Uncomment this line to force the bcompare
-# BCOMPARE_ENABLED=1
+BCOMPARE_ENABLED=${BCOMPARE_ENABLED:-1}
 
 if ! [[ -z ${BCOMPARE_ENABLED} ]]; then 
   if ! [[ -r /usr/bin/bcompare ]]; then
