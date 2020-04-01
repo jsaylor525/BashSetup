@@ -54,7 +54,7 @@ function add_hook_to_bashrc() {
 
 # Force this to be run in the Repo's directory
 if [ -f $(pwd)/install.sh ]; then
-  cleanup.sh
+  . cleanup.sh
   create_bachrc_backup
   add_hook_to_bashrc
 else
