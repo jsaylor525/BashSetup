@@ -27,6 +27,7 @@ The following variables can be used to alter the behavior if exported in your `~
 * **USE_ANACONDA** - set this to any value to configure conda
 * **JAVA_DEV** - set this to configure java settings
 * **USE_OCTAVE** - set this to configure octave settings
+* **USE_XILINX** - set this to configure xilinx settings
 * **DEFAULT_PYTHON_VER** - allows the default python version to be used with shorthand `python` an `py`
     + default to python3
 * **BCOMPARE_ENABLED** - if you want to use beyond compare as your default diff and merge tool
