@@ -4,6 +4,11 @@ This repository helps to created a similar feel on all systems.
 To use simply clone the repo and then install configuration.
 The `install.sh` script will handle updating your local **.bashrc** so that all the scripts inside the `.bashrc.d` are run.
 
+Developers who might find this useful.
+- FPGA Developers
+- Embedded SW Developers
+- Other developers who are will to fork and twick for their purposes.
+
 ```bash
 . install
 ```
